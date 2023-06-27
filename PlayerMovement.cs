@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //rb.MovePosition(rb.position + Vector3.forward * movementSpeed * Time.deltaTime);
+        
         if(Input.GetKeyDown("right")){
 
             lane = Mathf.Min(lane+1, 2);
