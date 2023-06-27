@@ -34,19 +34,19 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log(lane);
         if(lane==0){
 
-            rb.position= new Vector3(-2.5f, rb.position.y, rb.position.z);
+            rb.position= new Vector3(-1.5f, rb.position.y, rb.position.z);
         }
         if(lane==1){
 
-            rb.position= new Vector3(2.5f, rb.position.y, rb.position.z);
+            rb.position= new Vector3(1.5f, rb.position.y, rb.position.z);
         }
         if(lane==2){
 
-            rb.position= new Vector3(7.5f, rb.position.y, rb.position.z);
+            rb.position= new Vector3(4.5f, rb.position.y, rb.position.z);
         }
         if(lane==-1){
 
-            rb.position= new Vector3(-7.5f, rb.position.y, rb.position.z);
+            rb.position= new Vector3(-4.5f, rb.position.y, rb.position.z);
         }
     }
 }
