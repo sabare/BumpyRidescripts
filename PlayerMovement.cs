@@ -31,7 +31,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void MoveChar(int lane){
-        Debug.Log(lane);
         if(lane==0){
 
             rb.position= new Vector3(-1.5f, rb.position.y, rb.position.z);
