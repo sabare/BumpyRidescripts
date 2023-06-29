@@ -28,14 +28,13 @@ public class tileManager : MonoBehaviour
     }
 
     public void spawnTile(int tileIndex){
-        Debug.Log("yes");
+
         GameObject go = Instantiate(tilePrefabs[tileIndex], new Vector3(0, 0.5f, 120), Quaternion.identity);
         activeTiles.Add(go);
     }
 
     public void deleteTile(){
 
-        Debug.Log("yesf");
         Destroy(activeTiles[0]);
         activeTiles.RemoveAt(0);
     }
