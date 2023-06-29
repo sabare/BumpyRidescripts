@@ -6,8 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     int lane = 0;
-    public float movementSpeed = 5f;
-
+    //public float movementSpeed = 10f;
+    int oldlane = 0;
     Rigidbody rb;
     void Start()
     {
@@ -27,25 +27,39 @@ public class PlayerMovement : MonoBehaviour
 
             lane = Mathf.Max(lane-1, -1);
         }
-        MoveChar(lane);
+        
+    }
+
+    void FixedUpdate(){
+
+        if(lane!=oldlane)
+            MoveChar(lane);
     }
 
     void MoveChar(int lane){
         if(lane==0){
-
-            rb.position= new Vector3(-1.5f, rb.position.y, rb.position.z);
+            rb.MovePosition(new Vector3(-1.5f, rb.position.y, rb.position.z));
+            // rb.position= new Vector3(-1.5f, rb.position.y, rb.position.z);
+            oldlane = lane;
         }
         if(lane==1){
 
-            rb.position= new Vector3(1.5f, rb.position.y, rb.position.z);
+            // rb.position= new Vector3(1.5f, rb.position.y, rb.position.z);
+            rb.MovePosition(new Vector3(1.5f, rb.position.y, rb.position.z));
+            oldlane = lane;
+
         }
         if(lane==2){
 
-            rb.position= new Vector3(4.5f, rb.position.y, rb.position.z);
+            // rb.position= new Vector3(4.5f, rb.position.y, rb.position.z);
+            rb.MovePosition(new Vector3(4.5f, rb.position.y, rb.position.z));
+            oldlane = lane;
         }
         if(lane==-1){
 
-            rb.position= new Vector3(-4.5f, rb.position.y, rb.position.z);
+            // rb.position= new Vector3(-4.5f, rb.position.y, rb.position.z);
+            rb.MovePosition(new Vector3(-4.5f, rb.position.y, rb.position.z));
+            oldlane = lane;
         }
     }
 }

@@ -9,7 +9,16 @@ public class tileManager : MonoBehaviour
     private List<GameObject> activeTiles = new List<GameObject>();
     void Start()
     {
-        Instantiate(tilePrefabs[0],Vector3.zero , Quaternion.identity);
+        GameObject start = Instantiate(tilePrefabs[0],new Vector3(0,0.5f,-30) , Quaternion.identity);
+        activeTiles.Add(start);
+        GameObject start1 = Instantiate(tilePrefabs[0],new Vector3(0,0.5f,0) , Quaternion.identity);
+        activeTiles.Add(start1);
+        GameObject start2 = Instantiate(tilePrefabs[1],new Vector3(0,0.5f,30) , Quaternion.identity);
+        activeTiles.Add(start2);
+        GameObject start3 = Instantiate(tilePrefabs[2],new Vector3(0,0.5f,60) , Quaternion.identity);
+        activeTiles.Add(start3);
+        GameObject start4 = Instantiate(tilePrefabs[3],new Vector3(0,0.5f,90) , Quaternion.identity);
+        activeTiles.Add(start4);
     }
 
     // Update is called once per frame
@@ -19,13 +28,14 @@ public class tileManager : MonoBehaviour
     }
 
     public void spawnTile(int tileIndex){
-
-        GameObject go = Instantiate(tilePrefabs[tileIndex], Vector3.zero, Quaternion.identity);
+        Debug.Log("yes");
+        GameObject go = Instantiate(tilePrefabs[tileIndex], new Vector3(0, 0.5f, 120), Quaternion.identity);
         activeTiles.Add(go);
     }
 
-    private void deleteTile(){
+    public void deleteTile(){
 
+        Debug.Log("yesf");
         Destroy(activeTiles[0]);
         activeTiles.RemoveAt(0);
     }
