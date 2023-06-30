@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class floorControl : MonoBehaviour
+public class ScoreUpdate : MonoBehaviour
 {
     // Start is called before the first frame update
-    float speed = -12f;
+
+    public TMP_Text life_text;
+    public int life = 4;
     void Start()
     {
         
@@ -14,7 +17,6 @@ public class floorControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += Vector3.forward * speed * Time.deltaTime; 
-
+        life_text.text = "Life:"+ life;
     }
 }
